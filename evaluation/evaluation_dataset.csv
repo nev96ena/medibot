@@ -1,0 +1,28 @@
+id,Input Question,Expected Classification,Ideal Answer / Key Info,Notes
+1,Is Cedars-Sinai Medical Center private or public?,sql,Private,Specific institution info.
+2,List all doctors who specialize in Pediatrics.,sql,"Should list names like Sarah Smith, John Miller, John Davis, James Williams, Sophia Johnson, Emily Jones, Robert Miller.",Simple filtering.
+3,What are the common symptoms of a stroke?,rag,"Numbness (face/arm/leg), confusion, trouble speaking/seeing, dizziness, severe headache.",General medical info.
+4,What is the address of Mayo Clinic?,sql,"200 1st St SW, Rochester, MN",Specific institution info.
+5,Who developed you?,general,Should state it doesn't know or give a generic answer about its developers.,About the bot itself.
+6,How is type 2 diabetes typically managed?,rag,"Diet, exercise, medication (Metformin etc.), blood sugar monitoring.",General medical info.
+7,How many doctors specialize in Dermatology?,sql,"Should return the count (e.g., 8 based on the list).",Tests COUNT aggregation.
+8,Which doctor specializes in Surgery and is interested in Pregnancy?,sql,Sophia Johnson,Setup for context (Original ID: 20a).
+9,Where does she work?,sql,Requires finding Sophia Johnson's institution (conceptual join needed). Answer depends on DB schema link.,Tests context (pronoun) (Original ID: 20b).
+10,What is the current time in Belgrade?,general,Should state it cannot access real-time data like time/weather.,Out of domain (real-time).
+11,What causes cataracts?,rag,"Aging, UV exposure, diabetes, smoking, eye injuries, certain medications (steroids).",General medical info.
+12,Hi MediBot!,general,A simple greeting response.,Greeting.
+13,Who is the best cardiologist?,general,Should state it cannot give medical advice or opinions on 'best' doctors.,Subjective/Opinion-based.
+14,Tell me about Dr. Emily Williams in Neurology.,sql,"Should mention specialization (Neurology), field of interest (Diabetes). Institution info might be missing/joined.",Specific entity lookup.
+15,Tell me about appendicitis.,rag,"Inflammation of appendix, symptoms (pain LRQ, nausea, fever), treatment (surgery).",Setup for context (Original ID: 21a).
+16,Is it considered a medical emergency?,rag,"Yes, usually requires prompt medical attention/surgery to avoid rupture.",Tests context (pronoun 'it') (Original ID: 21b).
+17,Find surgeons interested in Hypertension.,sql,Should list James Garcia.,Filtering two columns.
+18,Tell me about treating bone fractures for patients like David Davis.,rag,"Answer should focus on bone fracture treatment (casting, surgery etc.). Mentioning David Davis might be ignored.",Mixes general topic & specific name.
+19,Thank you for your help.,general,"A polite closing response ('You're welcome!', etc.).",Closing.
+20,Which doctors have a field of interest in Stroke?,sql,"Should list Olivia Miller, Michael Garcia, John Williams, Sarah Rodriguez, Michael Garcia, Sophia Miller, Emily Smith, Sarah Martinez, Robert Miller, Olivia Miller.",Filtering by interest.
+21,Can you explain hypertension?,rag,"High blood pressure, definition, risks (heart disease, stroke), mention lifestyle/treatment options briefly.",General medical info.
+22,Which ophthalmologists are based at Johns Hopkins Hospital?,sql,Requires joining Doctors and Institutions tables (conceptually). Result depends heavily on actual DB schema link.,Tests potential JOIN.
+23,Does the Mayo Clinic handle stroke patients?,rag,Should answer based on general knowledge (likely yes) or state it cannot check specific clinic services from its RAG data.,Requires world knowledge or specific RAG data beyond provided schema.
+24,What are some ways to prevent depression?,rag,"Exercise, social connection, stress management, healthy diet, seeking help, therapy/medication in some cases.",General medical/wellness.
+25,Are there any gynecologists interested in Pregnancy?,sql,Should list Michael Williams.,Filtering two columns.
+26,Can you list pediatricians and also tell me about childhood asthma?,sql,"Ideal: Bot should do one first (e.g., list peds) and ask about asthma, or vice versa.",Combines two distinct requests.
+27,What is the institution type for Mount Sinai Hospital?,sql,Public,Specific institution info.
