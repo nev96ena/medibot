@@ -20,7 +20,7 @@ Before you begin, ensure you have the following installed:
 Open your terminal or command prompt and clone the project repository:
 
 git clone <your_repository_url>
-cd medibot-project
+cd medibot
 
 ### 2. Install dependencies
 Install all required Python libraries listed in the requirements.txt file:
@@ -28,6 +28,11 @@ Install all required Python libraries listed in the requirements.txt file:
 pip install -r requirements.txt
 
 ### 3. Database Setup 
+Run this in your terminal: 
+
+cd data/sql_setup/
+docker-compose up
+python insert_data.py
 
 ### 4. Ollama Setup (LLM)
 Make sure the Ollama application or service is running on your machine.
@@ -39,4 +44,4 @@ ollama pull mistral:7b
 
 Navigate to the project's root directory in your terminal and run the following command:
 
-streamlit run app/app_streamlit.py
+streamlit run app/streamlit_app.py
